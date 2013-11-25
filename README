@@ -1,0 +1,20 @@
+DracoDice, by kafkaEsc
+
+DracoDice is push-your-luck dice game based heavily on the games Pig and 
+Zombie Dice. The theme is that players are trying to loot a dragon's den. 
+
+Each dice roll has three possbile outcomes: successfully looting, a possible 
+reattempt, or a burn from the dragon.
+
+There are three different kinds of dice: gold, silver, and bronze. They 
+represent the different kinds of loot in the dragon's den. The more valuable 
+the loot, the more strongly the dragon prizes it, and thus more risky to swipe.
+
+Gold has 1/6 chance of success, 3/6 chance of a burn, and 2/6 chance to retry.
+Silver has 2/6 chance of success, 2/6 chance of a burn, and 2/6 chance to retry.
+Bronze has 3/6 chance of success, 1/6 chance of a burn, and 2/6 chance to retry.
+
+After a player roles, he collects point and takes on burns. He can then choose 
+which dice he wants to re-roll. The player's points becomes permanent once 
+she is no longer rolling dice. If a player has five burns a state of 
+burnination is reached and they player loses all points and is out of the round.
