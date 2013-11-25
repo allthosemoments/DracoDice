@@ -45,4 +45,15 @@ public class Die
 		}
 		return -1;
 	}
+
+	public String toString()
+	{
+		switch( _treasure )
+		{
+			case GOLD:   return "G"; 
+			case SILVER: return "S"; 
+			case BRONZE: return "B"; 
+		}
+		return "ERR";
+	}
 }
