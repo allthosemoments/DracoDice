@@ -16,19 +16,29 @@ public class BagOfDice
 		}
 	}
 
-	public ArrayList<Die> drawEight()
+	public ArrayList<Die> take(int n)
 	{
 		int count = 0;
 		ArrayList<Die> newHand = new ArrayList<Die>();
-		while(count < 8)
+		while(count < n)
 		{
 			int chosenDie = 1 + (int)((_dice.size() - 1) * Math.random());
 			newHand.add(_dice.remove(chosenDie));
 			count++;
 		}
-		for(int i = 0; i < 8; i++)
-			System.out.println(newHand.get(i));
+
+		for(int i = 0; i < newHand.size(); i++)
+			System.out.print(newHand.get(i));
+		System.out.println();
 
 		return newHand;
-	}	
+	}
+
+	public String toString()
+	{
+		StringBuilder print = new StringBuilder();
+		for(int i = 0; i < _dice.size(); i++)
+			print.append(_dice.get(i).toString());
+		return print.toString();
+	}
 }
