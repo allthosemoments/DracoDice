@@ -1,23 +1,28 @@
-import Math.random; 
+import java.util.Random; 
 
 public class Die
 {
-	private enum type { GOLD, SILVER, BRONZE }
+	public enum type { GOLD, SILVER, BRONZE }
 
-	private type treasure;
+	private type _treasure;
 
 	public Die()
 	{
-		treasure = type.BRONZE;
+		_treasure = type.BRONZE;
 	}
 
 	public Die(char treasure)
 	{
 		switch(treasure)
 		{
-		case 'g': treasure = type.GOLD;   break;
-		case 's': treasure = type.SILVER; break;
-		case 'b': treasure = type.BRONZE; break;
+		case 'g': _treasure = type.GOLD;   break;
+		case 's': _treasure = type.SILVER; break;
+		case 'b': _treasure = type.BRONZE; break;
 		}
+	}
+
+	public int roll()
+	{
+		return 1 + (int)(6 * Math.random());
 	}
 }
