@@ -19,10 +19,10 @@ public class BagOfDice
 	public ArrayList<Die> drawEight()
 	{
 		int count = 0;
-		ArrayList<Die> newHand = new ArrayList();
+		ArrayList<Die> newHand = new ArrayList<Die>();
 		while(count < 8)
 		{
-			int chosenDie = 1 + (int)(_dice.size() * Math.random());
+			int chosenDie = 1 + (int)((_dice.size() - 1) * Math.random());
 			newHand.add(_dice.remove(chosenDie));
 			count++;
 		}
