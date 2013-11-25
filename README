@@ -3,7 +3,7 @@ DracoDice, by kafkaEsc
 DracoDice is push-your-luck dice game based heavily on the games Pig and 
 Zombie Dice. The theme is that players are trying to loot a dragon's den. 
 
-Each dice roll has three possbile outcomes: successfully looting, a possible 
+Each dice roll has three possbile outcomes: successful looting, a possible 
 reattempt, or a burn from the dragon.
 
 There are three different kinds of dice: gold, silver, and bronze. They 

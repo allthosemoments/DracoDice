@@ -10,7 +10,7 @@ public class DracoDice
 
 		for(int i = 0; i < 20; i++)
 		{
-			System.out.println("== Ronud " + i + " ==");
+			System.out.println("== Round " + i + " ==");
 			System.out.println("Gold result  : " + gold.roll());
 			System.out.println("Silver result: " + gold.roll());
 			System.out.println("Bronze result: " + gold.roll());
