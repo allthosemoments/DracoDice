@@ -11,5 +11,6 @@ public class Game
 		_playerNo = n;
 		_players = new Player[n];
 		_diceBag = new BagOfDice();
+		System.out.println("Inside the diceBag: " + _diceBag);
 	}
 }

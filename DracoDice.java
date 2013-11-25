@@ -8,10 +8,14 @@ public class DracoDice
 		Die silver = new Die('s');
 		Die bronze = new Die('b');
 
+		Game g = new Game(2);
+
+/*
 		BagOfDice bod = new BagOfDice();
 		System.out.println("Inside dice bag: " + bod);
 		System.out.print("Drawn from bag : ");
 		bod.take(8);
 		System.out.println("Inside dice bag: " + bod);
+*/
 	}
 }
