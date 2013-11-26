@@ -1,21 +1,46 @@
+import java.util.Scanner;
+
 public class DracoDice
 {
 	public static void main(String[] args)
 	{
-		System.out.println("== DracoDice! ==");
+		Menu.printIntro();
+		
+		boolean run = true;
+		while(run)
+		{
+			Menu.printNavigation();
+			Scanner sc = new Scanner(System.in);
+			sc.useDelimiter("\n");
 
-		Die gold   = new Die('g');
-		Die silver = new Die('s');
-		Die bronze = new Die('b');
+			String navigation = sc.next();
+			char nav = navigation.charAt(0);
+			switch(nav)
+			{
+			case '1': 
+				Menu.playerCountQuery();
+				boolean validPlayerCount = false;
+				do
+				{
+					System.out.print("-> ");
+					navigation = sc.next();
+					nav = navigation.charAt(0);
+					if(nav < '9' && nav > '0')
+					{
+						Game g = new Game(nav - '0');
+						validPlayerCount = true;
+					}
+				} while (!validPlayerCount);
+				break;
+			case '2': break;
+			case '3': break;
+			case '4': break;
+			case '0': 
+				run = false; 
+				break;
+			}
+		}
+//		Game g = new Game(2);
 
-		Game g = new Game(2);
-
-/*
-		BagOfDice bod = new BagOfDice();
-		System.out.println("Inside dice bag: " + bod);
-		System.out.print("Drawn from bag : ");
-		bod.take(8);
-		System.out.println("Inside dice bag: " + bod);
-*/
 	}
 }

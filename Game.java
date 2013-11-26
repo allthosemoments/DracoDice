@@ -30,17 +30,12 @@ public class Game
 				boolean endTurn = false;
 				while(!endTurn)
 				{
-					System.out.println("Round No. " + _roundNo + ", Player" + 
-						_activePlayer + "'s turn");
-					System.out.println("Score: " + _players[_activePlayer].getScore() + 
-						"    Damage: " + _players[_activePlayer].getDamage() + "\n");
+					printHUD();
 
 					_players[_activePlayer].drawNewHand(_diceBag.take(8));
 					System.out.println(_players[_activePlayer]);
 
-					System.out.print("Type \'End turn\' to finish your turn\n" + 
-						"Type \'Quit game\' to end the game\n" +
-						"-> ");
+					printCommands();
 
 					String command = sc.next();
 					char   comm    = command.charAt(0);
@@ -58,6 +53,21 @@ public class Game
 			}
 			_roundNo++;
 		}
+	}
+
+	private void printHUD()
+	{
+		System.out.println("\nRound No. " + _roundNo + 
+			", Player" + (_activePlayer + 1) + "'s turn\n" +
+			"Score: " + _players[_activePlayer].getScore() + "    " +
+			"Damage: " + _players[_activePlayer].getDamage() + "\n");
+	}
+
+	private void printCommands()
+	{
+		System.out.print("Type \'End turn\' to finish your turn\n" + 
+			"Type \'Quit game\' to end the game\n" +
+			"-> ");
 	}
 }
 
