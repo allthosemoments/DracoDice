@@ -36,10 +36,9 @@ public class Game
 						"    Damage: " + _players[_activePlayer].getDamage() + "\n");
 
 					_players[_activePlayer].drawNewHand(_diceBag.take(8));
-					System.out.print(_players[_activePlayer]);
+					System.out.println(_players[_activePlayer]);
 
-					System.out.print("\nIn the main game section.\n" + 
-						"Type \'End turn\' to finish your turn\n" + 
+					System.out.print("Type \'End turn\' to finish your turn\n" + 
 						"Type \'Quit game\' to end the game\n" +
 						"-> ");
 
@@ -53,6 +52,7 @@ public class Game
 					case 'Q': endTurn = true; endRound = true; gameOn  = false; break;
 					}
 				}
+				_diceBag.replace(_players[_activePlayer].discard());
 				_activePlayer = (++_activePlayer) % _playerNo;
 				if(_activePlayer == 0) endRound = true;
 			}

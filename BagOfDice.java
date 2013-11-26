@@ -16,6 +16,12 @@ public class BagOfDice
 		}
 	}
 
+	public void replace(ArrayList<Die> in)
+	{
+		for(int i = 0; i < in.size(); i++)
+			_dice.add(in.get(i));
+	}
+
 	public ArrayList<Die> take(int n)
 	{
 		int count = 0;

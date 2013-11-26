@@ -32,12 +32,18 @@ public class Player
 		_damage += n;
 	}
 
-	public ArrayList<Die> discardHand()
+	public ArrayList<Die> discard()
 	{
 		ArrayList<Die> temp = new ArrayList<Die> ();
 		for(int i = 0; i < _hand.size(); i++)
 			temp.add(_hand.get(i));
+		for(int i = 0; i < _active.size(); i++)
+			temp.add(_active.get(i));
+		for(int i = 0; i < _reserve.size(); i++)
+			temp.add(_reserve.get(i));
 		_hand.clear();
+		_active.clear();
+		_reserve.clear();
 		return temp;
 	}
 
