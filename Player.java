@@ -2,11 +2,11 @@ import java.util.ArrayList;
 
 public class Player
 {
-	int _damage;
-	int _score;
-	ArrayList<Die> _hand;
-	ArrayList<Die> _active;
-	ArrayList<Die> _reserve;
+	private int _damage;
+	private int _score;
+	private ArrayList<Die> _hand;
+	private ArrayList<Die> _active;
+	private ArrayList<Die> _reserve;
 
 	public Player()
 	{
@@ -47,8 +47,54 @@ public class Player
 			_hand.add(in.get(i));
 	}
 
+	public int getDamage()
+	{
+		return _damage;
+	}
+
+	public int getScore()
+	{
+		return _score;
+	}
+
+	public String printActive()
+	{
+		StringBuilder active = new StringBuilder();
+		for(int i = 0; i < _active.size(); i++)
+			active.append(_active.get(i) + " ");
+
+		return active.toString();
+	}
+
+	public String printHand()
+	{
+		StringBuilder hand = new StringBuilder();
+		for(int i = 0; i < _hand.size(); i++)
+			hand.append(_hand.get(i) + " ");
+
+		return hand.toString();
+	}
+
+	public String printReserve()
+	{
+		StringBuilder reserve = new StringBuilder();
+		for(int i = 0; i < _reserve.size(); i++)
+			reserve.append(_reserve.get(i) + " ");
+
+		return reserve.toString();
+	}
+
 	public void reserve(int idx)
 	{
 		_reserve.add(_hand.remove(idx));
+	}
+
+	public String toString()
+	{
+		StringBuilder s = new StringBuilder();
+		s.append("Activated dice  : " + printActive()  + "\n");
+		s.append("Unverified dice : " + printHand()    + "\n");
+		s.append("Deactivated dice: " + printReserve() + "\n");
+		return s.toString();
 	}
 }

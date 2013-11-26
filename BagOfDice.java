@@ -19,18 +19,13 @@ public class BagOfDice
 	public ArrayList<Die> take(int n)
 	{
 		int count = 0;
-		ArrayList<Die> newHand = new ArrayList<Die>();
+		ArrayList<Die> newHand = new ArrayList<Die> ();
 		while(count < n)
 		{
 			int chosenDie = 1 + (int)((_dice.size() - 1) * Math.random());
 			newHand.add(_dice.remove(chosenDie));
 			count++;
 		}
-
-		for(int i = 0; i < newHand.size(); i++)
-			System.out.print(newHand.get(i));
-		System.out.println();
-
 		return newHand;
 	}
 

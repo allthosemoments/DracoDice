@@ -2,19 +2,21 @@ import java.util.Scanner;
 
 public class Game
 {
-	int _roundNo;
-	int _playerNo;
-	int _activePlayer;
-	Player[] _players;
-	BagOfDice _diceBag;
+	private int _roundNo;
+	private int _playerNo;
+	private int _activePlayer;
+	private Player[] _players;
+	private BagOfDice _diceBag;
 
 	Game(int n)
 	{
-		_roundNo       = 0;
+		_roundNo      = 0;
 		_playerNo     = n;
 		_activePlayer = 0;
 		_players = new Player[n];
 		_diceBag = new BagOfDice();
+
+		for(int i = 0; i < n; i++) _players[i] = new Player();
 
 		boolean gameOn = true;
 		while(gameOn)
@@ -28,10 +30,15 @@ public class Game
 				boolean endTurn = false;
 				while(!endTurn)
 				{
-					System.out.println("Round No. " + _roundNo);
-					System.out.println("Player [" + _activePlayer + "]");
+					System.out.println("Round No. " + _roundNo + ", Player" + 
+						_activePlayer + "'s turn");
+					System.out.println("Score: " + _players[_activePlayer].getScore() + 
+						"    Damage: " + _players[_activePlayer].getDamage() + "\n");
 
-					System.out.print("In the main game section.\n" + 
+					_players[_activePlayer].drawNewHand(_diceBag.take(8));
+					System.out.print(_players[_activePlayer]);
+
+					System.out.print("\nIn the main game section.\n" + 
 						"Type \'End turn\' to finish your turn\n" + 
 						"Type \'Quit game\' to end the game\n" +
 						"-> ");
